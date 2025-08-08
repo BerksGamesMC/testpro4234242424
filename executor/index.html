@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,33 +21,56 @@
     }
     h1 {
       color: #007bff;
-      margin-bottom: 20px;
-    }
-    p {
-      max-width: 600px;
-      line-height: 1.6;
-      font-size: 18px;
       margin-bottom: 30px;
+      font-weight: 900;
+      font-size: 2.5rem;
     }
-    a.back-link {
-      color: #007bff;
+    .btn-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 600px;
+      width: 100%;
+    }
+    button {
+      flex: 1 1 120px;
+      background: linear-gradient(135deg, #0057ff, #00ffaa);
+      border: none;
+      color: white;
       font-weight: 700;
-      text-decoration: none;
-      font-size: 16px;
+      font-size: 1.1rem;
+      padding: 15px 25px;
+      border-radius: 12px;
       cursor: pointer;
+      box-shadow: 0 6px 15px rgba(0,123,255,0.6);
+      transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
       user-select: none;
     }
-    a.back-link:hover {
-      text-decoration: underline;
+    button:hover:not(:disabled) {
+      background: linear-gradient(135deg, #00aaff, #00ffcc);
+      box-shadow: 0 8px 20px rgba(0,180,255,0.8);
+      transform: translateY(-3px);
+    }
+    button:active:not(:disabled) {
+      transform: translateY(1px);
+      box-shadow: 0 4px 10px rgba(0,123,255,0.5);
+    }
+    button:disabled {
+      background: #444;
+      cursor: default;
+      box-shadow: none;
+      color: #bbb;
     }
   </style>
 </head>
 <body>
-  <h1>Best Android Executor</h1>
-  <p>
-    Welcome to the Best Android Executor page!<br />
-    Here you can add information, links, or downloads related to the best Android executor scripts.
-  </p>
-  <a href="https://berksscripts.netlify.app/" class="back-link">&larr; Back to BerksScripts Home</a>
+  <h1>Best Android Executor (Free🥶)</h1>
+  <div class="btn-container">
+    <button>Delta</button>
+    <button>Fluxus</button>
+    <button>Cortex</button>
+    <button disabled>Coming Soon...</button>
+  </div>
 </body>
 </html>
