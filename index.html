@@ -115,7 +115,6 @@
     flex-grow: 1;
     margin-top: 50px; /* To avoid top bar */
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
@@ -165,22 +164,6 @@
     background-color: #0056b3;
   }
 
-  /* Executor link below search */
-  #executorLink {
-    margin-top: 12px;
-    text-align: center;
-  }
-  #executorLink a {
-    color: #007bff;
-    font-weight: 700;
-    text-decoration: none;
-    cursor: pointer;
-    user-select: none;
-  }
-  #executorLink a:hover {
-    text-decoration: underline;
-  }
-
   /* Footer text */
   footer {
     text-align: center;
@@ -210,11 +193,6 @@
   <div class="search-copy-wrapper">
     <input type="text" id="searchBox" placeholder="Enter script code..." />
     <button id="copyBtn">Copy Script</button>
-  </div>
-  <div id="executorLink">
-    <a href="https://berksscripts.netlify.app/executor/">
-      Best Android Executor
-    </a>
   </div>
 </div>
 
