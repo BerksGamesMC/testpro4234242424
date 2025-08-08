@@ -33,7 +33,7 @@
       max-width: 600px;
       width: 100%;
     }
-    button {
+    a.button-link {
       flex: 1 1 120px;
       background: linear-gradient(135deg, #0057ff, #00ffaa);
       border: none;
@@ -46,13 +46,17 @@
       box-shadow: 0 6px 15px rgba(0,123,255,0.6);
       transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
       user-select: none;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    button:hover:not(:disabled) {
+    a.button-link:hover {
       background: linear-gradient(135deg, #00aaff, #00ffcc);
       box-shadow: 0 8px 20px rgba(0,180,255,0.8);
       transform: translateY(-3px);
     }
-    button:active:not(:disabled) {
+    a.button-link:active {
       transform: translateY(1px);
       box-shadow: 0 4px 10px rgba(0,123,255,0.5);
     }
@@ -67,9 +71,9 @@
 <body>
   <h1>Best Android Executor (Free🥶)</h1>
   <div class="btn-container">
-    <button>Delta</button>
-    <button>Fluxus</button>
-    <button>Cortex</button>
+    <a href="https://www.mediafire.com/file/22a63mtaynl9hha/Delta-v2.685.apk/file" target="_blank" rel="noopener" class="button-link">Delta</a>
+    <a href="https://www.mediafire.com/file/bloaoz0nycbcpmy/Fluxus-Executor-v2.683.apk/file" target="_blank" rel="noopener" class="button-link">Fluxus</a>
+    <a href="https://www.mediafire.com/file/4n69thquo37kski/Codex_V2.683.apk/file" target="_blank" rel="noopener" class="button-link">Codex</a>
     <button disabled>Coming Soon...</button>
   </div>
 </body>
