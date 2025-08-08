@@ -4,254 +4,227 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>BerksScripts</title>
+<link rel="icon" href="favicon.png" type="image/png">
 <style>
-  * {
-    box-sizing: border-box;
-  }
-  body, html {
-    margin: 0; padding: 0; height: 100%;
-    font-family: Arial, sans-serif;
-    background-color: #121212;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-
-  /* Mavi top bar */
-  .top-bar {
-    background-color: #007bff;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    padding: 0 15px;
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-  }
-
-  /* Container for text and toggle button */
-  .berks-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  /* BerksScripts text */
-  .berks-text {
-    font-weight: 900;
-    font-size: 26px;
-    color: transparent;
-    position: relative;
-    overflow: hidden;
-    -webkit-background-clip: text;
-    background-clip: text;
-    background-image: linear-gradient(
-      90deg,
-      #ff0055,
-      #ffaa00,
-      #00ff99,
-      #0055ff,
-      #ff0055
-    );
-    background-size: 300% 300%;
-    animation: rainbow 5s linear infinite;
-    cursor: default;
-    user-select: none;
-  }
-
-  /* Stop animation */
-  .stopped {
-    animation: none !important;
-    background-image: none !important;
-    color: white !important;
-  }
-
-  @keyframes rainbow {
-    0% {
-      background-position: 0% 50%;
-    }
-    100% {
-      background-position: 300% 50%;
-    }
-  }
-
-  /* Small toggle button */
-  .toggle-btn {
-    background-color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 5px;
-    width: 28px;
-    height: 28px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    user-select: none;
-    transition: background-color 0.3s ease;
-  }
-  .toggle-btn:hover {
-    background-color: #e0e0e0;
-  }
-
-  /* Icon style */
-  .icon {
-    width: 16px;
-    height: 16px;
-    fill: #007bff;
-    transition: fill 0.3s ease;
-  }
-
-  /* Icon color when stopped */
-  .stopped + .toggle-btn .icon {
-    fill: #000000;
-  }
-
-  /* Center container for search & copy */
-  .center-container {
-    flex-grow: 1;
-    margin-top: 50px; /* To avoid top bar */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  /* Search and copy wrapper */
-  .search-copy-wrapper {
-    display: flex;
-    gap: 10px;
-    background-color: #000000cc;
-    padding: 20px 25px;
-    border-radius: 15px;
-    box-shadow: 0 0 15px #007bffaa;
-  }
-
-  /* Search box style */
-  #searchBox {
-    width: 300px;
-    padding: 10px 15px;
-    border-radius: 25px;
-    border: none;
-    font-size: 16px;
-    outline: none;
-    background-color: white;
-    color: black;
-    box-shadow: 0 0 5px rgba(0,0,0,0.3);
-    transition: box-shadow 0.3s ease;
-  }
-  #searchBox:focus {
-    box-shadow: 0 0 8px #007bff;
-  }
-
-  /* Copy button style */
-  #copyBtn {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    padding: 10px 20px;
-    font-weight: 700;
-    font-size: 16px;
-    cursor: pointer;
-    user-select: none;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 0 8px #007bffaa;
-  }
-  #copyBtn:hover {
-    background-color: #0056b3;
-  }
-
-  /* Footer text */
-  footer {
-    text-align: center;
-    padding: 15px 10px;
-    font-weight: 700;
-    color: white;
-    user-select: none;
-    background: transparent;
-  }
+  * {
+    box-sizing: border-box;
+  }
+  body, html {
+    margin: 0; padding: 0; height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  /* Mavi top bar */
+  .top-bar {
+    background-color: #007bff;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  }
+  /* Container for text and toggle button */
+  .berks-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  /* BerksScripts text */
+  .berks-text {
+    font-weight: 900;
+    font-size: 26px;
+    color: transparent;
+    position: relative;
+    overflow: hidden;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(
+      90deg,
+      #ff0055,
+      #ffaa00,
+      #00ff99,
+      #0055ff,
+      #ff0055
+    );
+    background-size: 300% 300%;
+    animation: rainbow 5s linear infinite;
+    cursor: default;
+    user-select: none;
+  }
+  /* Stop animation */
+  .stopped {
+    animation: none !important;
+    background-image: none !important;
+    color: white !important;
+  }
+  @keyframes rainbow {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 300% 50%;
+    }
+  }
+  /* Small toggle button */
+  .toggle-btn {
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    transition: background-color 0.3s ease;
+  }
+  .toggle-btn:hover {
+    background-color: #e0e0e0;
+  }
+  /* Icon style */
+  .icon {
+    width: 16px;
+    height: 16px;
+    fill: #007bff;
+    transition: fill 0.3s ease;
+  }
+  /* Icon color when stopped */
+  .stopped + .toggle-btn .icon {
+    fill: #000000;
+  }
+  /* Center container for search & copy */
+  .center-container {
+    flex-grow: 1;
+    margin-top: 50px; /* To avoid top bar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /* Search and copy wrapper */
+  .search-copy-wrapper {
+    display: flex;
+    gap: 10px;
+    background-color: #000000cc;
+    padding: 20px 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px #007bffaa;
+  }
+  /* Search box style */
+  #searchBox {
+    width: 300px;
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    transition: box-shadow 0.3s ease;
+  }
+  #searchBox:focus {
+    box-shadow: 0 0 8px #007bff;
+  }
+  /* Copy button style */
+  #copyBtn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 0 8px #007bffaa;
+  }
+  #copyBtn:hover {
+    background-color: #0056b3;
+  }
+  /* Footer text */
+  footer {
+    text-align: center;
+    padding: 15px 10px;
+    font-weight: 700;
+    color: white;
+    user-select: none;
+    background: transparent;
+  }
 </style>
 </head>
 <body>
-
-<!-- Top bar with BerksScripts and toggle -->
 <div class="top-bar" id="top-bar">
-  <div class="berks-container">
-    <!-- Dünya ikonu eklendi -->
-    <img src="https://i.postimg.cc/bd8j1MkH/image.png" alt="World Icon" style="width:16px; height:16px; user-select:none; margin-right:8px;" />
-    <div id="berksText" class="berks-text">BerksScripts</div>
-    <button id="toggleBtn" class="toggle-btn" aria-pressed="false" title="Toggle animation">
-      <!-- Light icon -->
-      <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
-        <path d="M9 21h6v-1H9v1zm3-19C8.48 2 5 5.48 5 10c0 3.9 2.69 7.16 6.31 7.88v3.12h1.38v-3.12C16.31 17.16 19 13.9 19 10c0-4.52-3.48-8-7-8zm0 13c-2.21 0-4-1.79-4-4a4 4 0 1 1 8 0c0 2.21-1.79 4-4 4z"/>
-      </svg>
-    </button>
-  </div>
+  <div class="berks-container">
+        <img src="https://i.postimg.cc/bd8j1MkH/image.png" alt="World Icon" style="width:16px; height:16px; user-select:none; margin-right:8px;" />
+    <div id="berksText" class="berks-text">BerksScripts</div>
+    <button id="toggleBtn" class="toggle-btn" aria-pressed="false" title="Toggle animation">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+        <path d="M9 21h6v-1H9v1zm3-19C8.48 2 5 5.48 5 10c0 3.9 2.69 7.16 6.31 7.88v3.12h1.38v-3.12C16.31 17.16 19 13.9 19 10c0-4.52-3.48-8-7-8zm0 13c-2.21 0-4-1.79-4-4a4 4 0 1 1 8 0c0 2.21-1.79 4-4 4z"/>
+      </svg>
+    </button>
+  </div>
 </div>
-
-<!-- Center search and copy -->
 <div class="center-container">
-  <div class="search-copy-wrapper">
-    <input type="text" id="searchBox" placeholder="Enter script code..." />
-    <button id="copyBtn">Copy Script</button>
-  </div>
+  <div class="search-copy-wrapper">
+    <input type="text" id="searchBox" placeholder="Enter script code..." />
+    <button id="copyBtn">Copy Script</button>
+  </div>
 </div>
-
-<!-- Footer -->
 <footer>Made By BerksScripts</footer>
-
 <script>
-  // Animation toggle
-  const berksText = document.getElementById('berksText');
-  const toggleBtn = document.getElementById('toggleBtn');
-  let isAnimating = true;
-
-  toggleBtn.addEventListener('click', () => {
-    if (isAnimating) {
-      berksText.classList.add('stopped');
-      toggleBtn.title = "Start animation";
-      isAnimating = false;
-    } else {
-      berksText.classList.remove('stopped');
-      toggleBtn.title = "Stop animation";
-      isAnimating = true;
-    }
-  });
-
-  // Script copy logic
-  const copyBtn = document.getElementById('copyBtn');
-  const searchBox = document.getElementById('searchBox');
-
-  const scripts = {
-    "YF7HSBCIS2": `loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/main/StealaCountry"))()`,
-    "YarhmMM2LD": `loadstring(game:HttpGet("https://raw.githubusercontent.com/Joystickplays/psychic-octo-invention/main/yarhm.lua", false))()`
-  };
-
-  copyBtn.addEventListener('click', () => {
-    const inputCode = searchBox.value.trim();
-
-    if (inputCode in scripts) {
-      const scriptToCopy = scripts[inputCode];
-      navigator.clipboard.writeText(scriptToCopy).then(() => {
-        const originalText = copyBtn.textContent;
-        copyBtn.textContent = "Script Copied";
-        setTimeout(() => {
-          copyBtn.textContent = originalText;
-        }, 2000);
-      }).catch(() => {
-        alert("Failed to copy.");
-      });
-    } else {
-      const originalText = copyBtn.textContent;
-      copyBtn.textContent = "Not Found Script";
-      setTimeout(() => {
-        copyBtn.textContent = originalText;
-      }, 2000);
-    }
-  });
+  // Animation toggle
+  const berksText = document.getElementById('berksText');
+  const toggleBtn = document.getElementById('toggleBtn');
+  let isAnimating = true;
+  toggleBtn.addEventListener('click', () => {
+    if (isAnimating) {
+      berksText.classList.add('stopped');
+      toggleBtn.title = "Start animation";
+      isAnimating = false;
+    } else {
+      berksText.classList.remove('stopped');
+      toggleBtn.title = "Stop animation";
+      isAnimating = true;
+    }
+  });
+  // Script copy logic
+  const copyBtn = document.getElementById('copyBtn');
+  const searchBox = document.getElementById('searchBox');
+  const scripts = {
+    "YF7HSBCIS2": `loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/main/StealaCountry"))()`,
+    "YarhmMM2LD": `loadstring(game:HttpGet("https://raw.githubusercontent.com/Joystickplays/psychic-octo-invention/main/yarhm.lua", false))()`
+  };
+  copyBtn.addEventListener('click', () => {
+    const inputCode = searchBox.value.trim();
+    if (inputCode in scripts) {
+      const scriptToCopy = scripts[inputCode];
+      navigator.clipboard.writeText(scriptToCopy).then(() => {
+        const originalText = copyBtn.textContent;
+        copyBtn.textContent = "Script Copied";
+        setTimeout(() => {
+          copyBtn.textContent = originalText;
+        }, 2000);
+      }).catch(() => {
+        alert("Failed to copy.");
+      });
+    } else {
+      const originalText = copyBtn.textContent;
+      copyBtn.textContent = "Not Found Script";
+      setTimeout(() => {
+        copyBtn.textContent = originalText;
+      }, 2000);
+    }
+  });
 </script>
-
 </body>
 </html>
