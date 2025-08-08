@@ -60,11 +60,18 @@
       transform: translateY(1px);
       box-shadow: 0 4px 10px rgba(0,123,255,0.5);
     }
-    button:disabled {
-      background: #444;
-      cursor: default;
-      box-shadow: none;
-      color: #bbb;
+    .back-home {
+      color: #007bff;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1.1rem;
+      align-self: center;
+      margin-top: 30px;
+      user-select: none;
+      text-decoration: underline;
+    }
+    .back-home:hover {
+      color: #00aaff;
     }
   </style>
 </head>
@@ -74,7 +81,9 @@
     <a href="https://www.mediafire.com/file/22a63mtaynl9hha/Delta-v2.685.apk/file" target="_blank" rel="noopener" class="button-link">Delta</a>
     <a href="https://www.mediafire.com/file/bloaoz0nycbcpmy/Fluxus-Executor-v2.683.apk/file" target="_blank" rel="noopener" class="button-link">Fluxus</a>
     <a href="https://www.mediafire.com/file/4n69thquo37kski/Codex_V2.683.apk/file" target="_blank" rel="noopener" class="button-link">Codex</a>
-    <button disabled>Coming Soon...</button>
+  </div>
+  <div class="back-home" onclick="location.href='https://berksscripts.netlify.app/'" role="button" tabindex="0" onkeydown="if(event.key==='Enter'){location.href='https://berksscripts.netlify.app/';}">
+    Back To Home
   </div>
 </body>
 </html>
